@@ -1,2 +1,4 @@
 rootProject.name = 'learn-tutorial'
-include('active-mq')
+include 'active-mq'
+include 'encrypt'
+

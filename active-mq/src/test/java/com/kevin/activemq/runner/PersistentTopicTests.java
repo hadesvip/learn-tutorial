@@ -17,6 +17,9 @@ public class PersistentTopicTests {
 
 	private final static String PERSISTENT_TOPIC_NAME = "PERSISTENT_TOPIC";
 
+	private static final String USERNAME = "root";
+	private static final String PASSWORD = "root";
+
 
 	/**
 	 * 生产者
@@ -29,7 +32,8 @@ public class PersistentTopicTests {
 		Connection connection = null;
 
 		try {
-			ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVEMQ_URL);
+			ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD,
+					ACTIVEMQ_URL);
 			connection = activeMQConnectionFactory.createConnection();
 			session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 			Topic topic = session.createTopic(PERSISTENT_TOPIC_NAME);
@@ -64,7 +68,8 @@ public class PersistentTopicTests {
 		Connection connection = null;
 		TopicSubscriber topicSubscriber = null;
 		try {
-			ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVEMQ_URL);
+			ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD,
+					ACTIVEMQ_URL);
 			connection = activeMQConnectionFactory.createConnection();
 			connection.setClientID("kevin");
 			session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);

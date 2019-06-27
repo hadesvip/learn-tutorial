@@ -20,6 +20,8 @@ public class BasicActiveMQTests {
 	private static final String ACTIVEMQ_URL = "tcp://118.24.16.109:61616";
 
 	private static final String QUEUE_NAME = "QUEUE-DEMO";
+	private static final String USERNAME = "root";
+	private static final String PASSWORD = "root";
 
 
 	/**
@@ -29,7 +31,8 @@ public class BasicActiveMQTests {
 	@Test
 	public void produceMessage() throws JMSException {
 
-		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVEMQ_URL);
+		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD,
+				ACTIVEMQ_URL);
 		Connection connection = activeMQConnectionFactory.createConnection();
 		connection.start();
 		Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
@@ -56,7 +59,8 @@ public class BasicActiveMQTests {
 	 */
 	@Test
 	public void consumeMessageTest() throws JMSException {
-		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVEMQ_URL);
+		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD,
+				ACTIVEMQ_URL);
 		Connection connection = activeMQConnectionFactory.createConnection();
 		connection.start();
 		Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
@@ -81,7 +85,8 @@ public class BasicActiveMQTests {
 	@Test
 	public void consumeListenerTest() throws JMSException, IOException {
 
-		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVEMQ_URL);
+		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD,
+				ACTIVEMQ_URL);
 		Connection connection = activeMQConnectionFactory.createConnection();
 		connection.start();
 		Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
@@ -115,7 +120,8 @@ public class BasicActiveMQTests {
 
 
 	public static void main(String[] args) throws JMSException, IOException {
-		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVEMQ_URL);
+		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(USERNAME, PASSWORD,
+				ACTIVEMQ_URL);
 		Connection connection = activeMQConnectionFactory.createConnection();
 		connection.start();
 		Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
