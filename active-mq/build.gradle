@@ -1,19 +1,7 @@
-//buildscript {
-//    repositories {
-//        mavenLocal()
-//        mavenCentral()
-//    }
-//    dependencies {
-//        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
-//    }
-//}
-
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 dependencies {
-//    implementation 'org.apache.activemq:activemq-spring:5.15.9'
-//    implementation 'org.apache.activemq:activemq-all:5.15.9'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-activemq'
 
