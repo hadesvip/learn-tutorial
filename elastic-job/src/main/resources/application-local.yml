@@ -1,0 +1,5 @@
+elastic:
+  job:
+    zookeeper:
+      namespace: simple-reg-center
+      server-list: 118.24.16.109:2181,118.24.16.109:2182,118.24.16.109:2183
