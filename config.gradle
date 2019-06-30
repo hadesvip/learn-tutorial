@@ -1,0 +1,3 @@
+ext {
+    elastic_job_version = '2.1.5'
+}

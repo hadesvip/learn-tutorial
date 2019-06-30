@@ -8,6 +8,7 @@ buildscript {
     }
 }
 
+apply from: "config.gradle"
 
 subprojects {
     apply plugin: 'java'

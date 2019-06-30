@@ -17,7 +17,7 @@ dependencies {
             'org.springframework.boot:spring-boot-autoconfigure'
     )
 
-    implementation('com.dangdang:elastic-job-lite-core:2.1.5') {
+    implementation("com.dangdang:elastic-job-lite-core:$rootProject.elastic_job_version") {
         exclude group: 'log4j', module: 'log4j'
     }
 
