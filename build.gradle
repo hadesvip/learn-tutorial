@@ -18,6 +18,14 @@ subprojects {
     targetCompatibility = '1.8'
 
 
+    idea {
+        module {
+            downloadSources = true
+            downloadJavadoc = false
+        }
+    }
+
+
     repositories {
         mavenLocal()
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
