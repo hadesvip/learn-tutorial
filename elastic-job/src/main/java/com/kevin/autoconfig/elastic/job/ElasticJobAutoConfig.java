@@ -10,7 +10,6 @@ import com.dangdang.ddframe.job.reg.base.CoordinatorRegistryCenter;
 import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +19,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConditionalOnBean(ZookeeperAutoConfig.class)
-//@AutoConfigureAfter(ZookeeperAutoConfig.class)
 public class ElasticJobAutoConfig {
 
   @Resource
